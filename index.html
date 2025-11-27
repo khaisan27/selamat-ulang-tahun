@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="form-container" class="form-container">
+      <h2>Masukkan Data Ulang Tahun Anda</h2>
+      <form id="birthday-form">
+        <label for="name">Nama Anda:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Masukkan nama lengkap"
+        />
+
+        <label for="age">Usia Anda Sekarang:</label>
+        <select id="age" name="age" required>
+          <option value="">Pilih Usia</option>
+          <!-- Generate options dari 1 sampai 100 -->
+          <script>
+            for (let i = 1; i <= 100; i++) {
+              document.write(`<option value="${i}">${i} tahun</option>`);
+            }
+          </script>
+        </select>
+
+        <button type="submit" class="submit-btn">Mulai Animasi 🎉</button>
+      </form>
+    </div>
+
+    <div id="animation-container" class="container hidden">
+      <h1 id="birthday-text">Selamat Ulang Tahun!</h1>
+      <img id="birthday-photo" src="gambar 1.jpg" alt="" />
+      <p id="sub-text">
+        Semoga hari ini penuh kebahagiaan dan tahun depan lebih baik lagi!
+      </p>
+      <button id="play-music" class="music-btn">Putar Musik 🎵</button>
+      <div class="balloons"></div>
+      <div class="confetti"></div>
+    </div>
+
+    <audio id="bg-music" loop>
+      <source
+        src="https://www.soundjay.com/misc/sounds/happy-birthday-song.mp3"
+        type="audio/mpeg"
+      />
+      Browser Anda tidak mendukung audio.
+    </audio>
+    <script src="script.js"></script>
+  </body>
+</html>

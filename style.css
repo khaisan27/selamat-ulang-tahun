@@ -1,0 +1,328 @@
+/* Reset dan styling dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #ff6b9d, #c44569, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  transition: all 1s ease; /* Transisi halus saat ganti container */
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styling form container */
+.form-container {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  max-width: 400px;
+  width: 90%;
+}
+
+.form-container h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.form-container input,
+.form-container select {
+  padding: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 254, 254, 0.2);
+  color: #c4bfbf;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input::placeholder {
+  color: rgba(234, 229, 229, 0.7);
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #000000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.submit-btn {
+  padding: 12px;
+  background: linear-gradient(45deg, #ff6b9d, #f5576c);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Container animasi (sembunyikan awal) */
+.container {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 90%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animasi teks utama dengan glow */
+#birthday-text {
+  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: fadeInBounceGlow 3s ease-in-out 1s forwards;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInBounceGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.5);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Styling dan animasi foto dengan glow */
+#birthday-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 10px 20px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeInPhotoGlow 2s ease-in-out 2.5s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#birthday-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInPhotoGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Animasi sub-teks */
+#sub-text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 3s forwards;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tombol musik */
+.music-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff6b9d, #f5576c);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling balon dengan variasi warna */
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: floatUp 7s linear infinite;
+  opacity: 0.9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 25px;
+  background: #333;
+}
+
+/* Variasi warna balon */
+.balloon:nth-child(odd) {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #feca57);
+}
+.balloon:nth-child(even) {
+  background: radial-gradient(circle at 30% 30%, #48cae4, #023e8a);
+}
+.balloon:nth-child(3n) {
+  background: radial-gradient(circle at 30% 30%, #f72585, #7209b7);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+}
+
+/* Confetti yang jatuh */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  animation: fall 5s linear infinite;
+  opacity: 0.8;
+}
+
+.confetti-piece:nth-child(odd) {
+  background: #ff6b6b;
+}
+.confetti-piece:nth-child(even) {
+  background: #48cae4;
+}
+.confetti-piece:nth-child(3n) {
+  background: #f72585;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 20px;
+  }
+  .form-container h2 {
+    font-size: 2rem;
+  }
+  #birthday-text {
+    font-size: 3rem;
+  }
+  #birthday-photo {
+    width: 200px;
+    height: 200px;
+  }
+  #sub-text {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 15px;
+  }
+}
